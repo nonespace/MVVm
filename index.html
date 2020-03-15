@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <input v-model="school.name" />
+      <div>name:{{school.name}}</div>
+      <div>age:{{school.age}}</div>
+      <div>
+        <input v-model="num1" />
+        <input v-model="num2" />
+        ===> sum:{{sum}}
+      </div>
+    </div>
+  </body>
+  <!-- <script src="./node_modules/vue/dist/vue.js"></script> -->
+  <script src="./MVVM.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        num1: 1,
+        num2:2,
+        school: {
+          name: "小明",
+          age: 10
+        }
+      },
+      computed: {
+        sum(){
+          return this.num1 + this.num2
+        }
+      },
+    });
+  </script>
+</html>
